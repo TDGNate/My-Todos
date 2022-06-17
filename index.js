@@ -3,11 +3,7 @@
 const message = document.querySelector('#message');
 const addBtn = document.querySelector('.submit');
 const todoList = document.querySelector('.todo-list');
-
-//Listening
-addBtn.addEventListener('click', addTodo);
-todoList.addEventListener('click', delOrCheck);
-
+const clearBtn = document.getElementById('clearTodos');
 
 //Functions
 
@@ -63,10 +59,9 @@ function saveLocalTodos(todo) {
         todos = [];
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
-    
-        todos.push(todo);
-        localStorage.setItem('todos', JSON.stringify(todos));
     }
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function removeLocalTodos(todo) {
@@ -115,6 +110,15 @@ function getTodos() {
     }
 }
 getTodos()
+
+
+//Listening
+addBtn.addEventListener('click', addTodo);
+todoList.addEventListener('click', delOrCheck);
+clearBtn.addEventListener('click', () => {
+    localStorage.clear()
+    location.reload()
+})
 
 // trash > <i class="fas fa-trash"></i>
 //check > <i class="fas fa-check"></i>
