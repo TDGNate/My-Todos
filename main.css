@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 :root {
 	--body-bg: linear-gradient(50deg, rgb(0, 34, 187), rgb(68, 227, 255) 96%);
@@ -18,7 +17,6 @@ body {
 	min-height: 100vh;
 	background: var(--body-bg);
 	background-size: contain;
-	/* overflow: hidden; */
 	justify-content: center;
 }
 
@@ -30,11 +28,11 @@ header {
 }
 
 h1 {
-	color: white;
+	color: var(--lght-clr);
 }
 
 a {
-	color: rgb(0, 23, 155);
+	color: rgb(0, 19, 128);
 }
 
 main {
@@ -45,6 +43,8 @@ main {
 	padding: 3rem;
 }
 
+/* Full Todo Box  */
+
 .container {
 	min-height: 257px;
 	width: 350px;
@@ -53,9 +53,7 @@ main {
 	font-size: 32px;
 	justify-content: center;
 	align-items: center;
-	/* position: relative; */
 	transition: 1.3s ease;
-	/* animation: slide-in 700ms ease; */
 }
 
 h6 {
@@ -99,6 +97,7 @@ h6 {
 
 .submit:hover {
 	background-color: rgb(85, 193, 255);
+	cursor: pointer;
 }
 
 hr {
@@ -138,22 +137,24 @@ hr {
 	border: none;
 	cursor: pointer;
 	color: white;
-	/* pointer-events: none; */
 }
 
 .fa-trash,
 .fa-check {
 	pointer-events: none;
 }
+
 .trash-btn {
 	background: rgb(61, 161, 255);
 }
+
 .trash-btn:hover {
 	background: rgb(126, 193, 255);
 }
 .completed-btn {
 	background: rgb(3, 243, 75);
 }
+
 .completed-btn:hover {
 	background: rgb(160, 255, 143);
 }
@@ -193,6 +194,7 @@ hr {
 
 #clearTodos:hover {
 	background-color: red;
+	cursor: pointer;
 }
 
 /* footer  */
