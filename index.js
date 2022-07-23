@@ -7,6 +7,7 @@ const clearBtn = document.getElementById('clearTodos');
 
 //Functions
 
+// add a todo function 
 function addTodo(e) {
     e.preventDefault();
     const text = message.value;
@@ -38,6 +39,7 @@ function addTodo(e) {
     }
 }
 
+// Check Element and Delete 
 function delOrCheck(e) {
     const item = e.target;
     if(item.classList[0] === 'trash-btn') {
@@ -53,6 +55,7 @@ function delOrCheck(e) {
     }
 }
 
+// Save Todo in localstorage 
 function saveLocalTodos(todo) {
     let todos;
     if (localStorage.getItem('todos') === null) {
@@ -64,6 +67,7 @@ function saveLocalTodos(todo) {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+// Remove todo from storage 
 function removeLocalTodos(todo) {
     let todos;
     if (localStorage.getItem('todos') === null) {
@@ -77,6 +81,7 @@ function removeLocalTodos(todo) {
     localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+// Once loaded, make Elements for stored Todos 
 function getTodos() {
     let todos;
     if (localStorage.getItem('todos') === null) {
@@ -111,7 +116,6 @@ function getTodos() {
 }
 getTodos()
 
-
 //Listening
 addBtn.addEventListener('click', addTodo);
 todoList.addEventListener('click', delOrCheck);
@@ -119,6 +123,3 @@ clearBtn.addEventListener('click', () => {
     localStorage.clear()
     location.reload()
 })
-
-// trash > <i class="fas fa-trash"></i>
-//check > <i class="fas fa-check"></i>
